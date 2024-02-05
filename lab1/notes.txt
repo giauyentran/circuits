@@ -1,0 +1,9 @@
+Naming Conventions:
+Exp 1: Vsexp1, Currentexp1
+Exp 2: Vsexp2, Currentexp2, Voutexp2
+Exp 3: 
+Exp 4: 
+
+Other Notes
+
+Exp 1: 499ohm resistor. Measured at 499.02 with Keithley Sourcemeter
