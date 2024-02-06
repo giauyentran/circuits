@@ -6,4 +6,5 @@ Exp 4:
 
 Other Notes
 
-Exp 1: 499ohm resistor. Measured at 499.02 with Keithley Sourcemeter
+Exp 1: 499ohm resistor. Measured at 499.14 with Keithley Sourcemeter
+
