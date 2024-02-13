@@ -1,0 +1,8 @@
+Variable Names
+Exp1: exp1_[i/v]_part[1/2]
+ex. exp1_i_part1, exp1_v_part1, exp1_i_part2, exp1_v_part2
+Exp2: ch[1/2]_exp2_[i/v]_[R]
+ex. ch1_exp2_i_499, ch2_exp2_i_499, ch2_exp2_v_499
+
+Resistor Values for exp2:
+499, 4.99k, 49.9k
