@@ -7,7 +7,11 @@ light_sea_green = [16 161 156]./255;
 black = [0 0 0]./255;
 white = [255 255 255]./255;
 
-load("Lab3exp2.mat")
+% These all have the same naming convention, so the variables overwrite
+% each other
+load("data/Lab3exp2_499.mat")
+load("data/Lab3exp2_4.9K.mat")
+load("data/Lab3exp2_49.9K.mat")
 
 %% Experiment 2
 

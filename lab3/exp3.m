@@ -7,7 +7,7 @@ light_sea_green = [16 161 156]./255;
 black = [0 0 0]./255;
 white = [255 255 255]./255;
 
-load("Lab3exp3.mat")
+load("data/Lab3exp3.mat")
 
 %% Experiment 3
 
