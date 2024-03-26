@@ -4,6 +4,8 @@
 % What is the difference between Vin and Vout for this circuit? 
 % What determines this voltage difference?
 
+load("data/Lab3exp3.mat")
+
 Vin = VExp3Ch1; %= Vb
 Vout = Ch2Exp3Voltage; %= Ve
 Ib = Ch1Exp3Current;

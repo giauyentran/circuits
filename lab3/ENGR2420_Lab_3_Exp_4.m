@@ -4,6 +4,8 @@
 % You should also include the emitter-follower VTC that you measured in Experiment 3 on this plot. 
 % For each collector resistor, what is the incremental voltage gain of the amplifier? 
 % What determines this voltage gain?
+load("data/Lab3exp3.mat")
+load("Lab3exp4.mat")
 
 Vin1 = VCh1Exp41; % Vb
 Vout1 = Ch2Exp4Voltage1; % Vc

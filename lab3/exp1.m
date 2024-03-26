@@ -7,7 +7,7 @@ light_sea_green = [16 161 156]./255;
 black = [0 0 0]./255;
 white = [255 255 255]./255;
 
-load("data/Lab3exp1.mat")
+load("Lab3exp1.mat")
 
 %% Experiment 1
 figure(1)
@@ -47,7 +47,7 @@ figure(2)
 current_gain = Ic./Ib;
 semilogx(Ib, current_gain, 'b.')
 hold on
-semilogx(Ib, rb.*gm, '-')
+% semilogx(Ib, rb.*gm, '-')
 
 title('TODO: Current Gain vs Base Current')
 xlabel('Base Current (A)')
