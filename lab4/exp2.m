@@ -15,7 +15,7 @@ load data/lab4_exp2_rev2.mat
 loglog(exp2_ch1_I, exp2_ch2_I, '.', Color=light_sea_green)
 hold on
 curvefit = fit(transpose(exp2_ch1_I), transpose(exp2_ch2_I), 'poly1');
-fplot(@(x) x)
+fplot(@(x) x, linewidth = 1.5)
 xlim([.95e-8 .0015])
 axis equal
 % m = 1.055, b = 8.035e-7
