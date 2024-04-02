@@ -14,14 +14,7 @@ load("data/lab4_exp1_rev3.mat")
 % min(IinExp1)
 % max(IinExp1)
 
-% Interpolate data
-function [v_g_out, I_sat_out] = process_data(v_g_in, I_sat_in)
-    % v_g_out = [linspace(min(v_g_in), 1.1, 40), linspace(1.1, max(v_g_in), 60)];
-    v_g_out = linspace(min(v_g_in), max(v_g_in), 150);
-    I_sat_out = interp1(v_g_in, I_sat_in, v_g_out);
-end
 
-figure(1)
 
 [exp1_nMOS1_V, exp1_nMOS1_I] = process_data(exp1_nMOS1_V, exp1_nMOS1_I);
 [exp1_nMOS2_V, exp1_nMOS2_I] = process_data(exp1_nMOS2_V, exp1_nMOS2_I);
@@ -71,17 +64,17 @@ title("nMOS Transistor Mean Gate Voltage Deviation")
 
 % Do the transistors generally match better at certain levels of inversion than others?
 figure(3)
-semilogx(exp1_nMOS1_I, exp1_nMOS1_V - (exp1_nMOS1_V + exp1_nMOS2_V + exp1_nMOS3_V + exp1_nMOS4_V)/4, '.', color = taupe_gray)
-hold on; grid minor; xlabel("Saturation Current (A)"); ylabel("Mean Gate Voltage Deviation (V)")
+semilogx(exp1_nMOS1_I, exp1_nMOS1_V - (exp1_nMOS1_V + exp1_nMOS2_V + exp1_nMOS3_V + exp1_nMOS4_V)/4, '.-', color = taupe_gray)
+hold on; grid minor; xlabel("Saturation Current (A)"); ylabel("Gate Voltage Deviation (V)")
 yline(0, color = black, linewidth = 1.5)
-semilogx(exp1_nMOS2_I, exp1_nMOS2_V - (exp1_nMOS1_V + exp1_nMOS2_V + exp1_nMOS3_V + exp1_nMOS4_V)/4, '.', color = bittersweet)
-semilogx(exp1_nMOS3_I, exp1_nMOS3_V - (exp1_nMOS1_V + exp1_nMOS2_V + exp1_nMOS3_V + exp1_nMOS4_V)/4, '.', color = light_sea_green)
-semilogx(exp1_nMOS4_I, exp1_nMOS4_V - (exp1_nMOS1_V + exp1_nMOS2_V + exp1_nMOS3_V + exp1_nMOS4_V)/4, '.', color = black)
+semilogx(exp1_nMOS2_I, exp1_nMOS2_V - (exp1_nMOS1_V + exp1_nMOS2_V + exp1_nMOS3_V + exp1_nMOS4_V)/4, '.-', color = bittersweet)
+semilogx(exp1_nMOS3_I, exp1_nMOS3_V - (exp1_nMOS1_V + exp1_nMOS2_V + exp1_nMOS3_V + exp1_nMOS4_V)/4, '.-', color = light_sea_green)
+semilogx(exp1_nMOS4_I, exp1_nMOS4_V - (exp1_nMOS1_V + exp1_nMOS2_V + exp1_nMOS3_V + exp1_nMOS4_V)/4, '.-', color = black)
 semilogx(exp1_nMOS1_I, abs(exp1_nMOS1_V - (exp1_nMOS1_V + exp1_nMOS2_V + exp1_nMOS3_V + exp1_nMOS4_V)/4) + abs(exp1_nMOS2_V - (exp1_nMOS1_V + exp1_nMOS2_V + exp1_nMOS3_V + exp1_nMOS4_V)/4) + abs(exp1_nMOS3_V - (exp1_nMOS1_V + exp1_nMOS2_V + exp1_nMOS3_V + exp1_nMOS4_V)/4) + abs(exp1_nMOS4_V - (exp1_nMOS1_V + exp1_nMOS2_V + exp1_nMOS3_V + exp1_nMOS4_V)/4), '.', color = pacific_cyan)
 xline(Is1, linewidth=1.5)
 legend_ = legend("I_s", "", "", "", "", "Total Abs Deviation", location = "northwest")
 % title(legend_, "nMOS")
-title("nMOS Transistor Mean Gate Voltage Deviation")
+title("nMOS Transistor Gate Voltage Deviation from Mean")
 
 
 % From one of your measured characteristics, extract that transistor’s incremental transcon-
@@ -106,3 +99,9 @@ legend("Measured Data", "Theoretical Fit")
 
 % Does the theoretical fit match the data?
 
+% Interpolate data
+function [v_g_out, I_sat_out] = process_data(v_g_in, I_sat_in)
+    % v_g_out = [linspace(min(v_g_in), 1.1, 40), linspace(1.1, max(v_g_in), 60)];
+    v_g_out = linspace(min(v_g_in), max(v_g_in), 150);
+    I_sat_out = interp1(v_g_in, I_sat_in, v_g_out);
+end
